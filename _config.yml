@@ -2,4 +2,3 @@ theme: jekyll-theme-cayman
 title: [AI on IBM i]
 description: [These are setup instructions and examples of how to call and interact with AI / LLMs via their APIs.]
 markdown: kramdown
-google_analytics: G-RK5TZ0QHMP
