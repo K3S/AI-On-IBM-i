@@ -8,6 +8,9 @@ The [IBM i OS](https://en.wikipedia.org/wiki/IBM_i) on [IBM Power Systems](https
 
 When writing new modern RPG programs the ability to integrate with AI / a LLM can seem daunting. However once you see how to setup local machine learning or an LLM OR setup an account with an AI company and call their APIs you will realize it is just another tool to help you accomplish the job. At this end of this guide you shoudl have enough information to integrate AI. 
 
+# Note On AI Personification
+
+It is easier to personify and describe AI / LLMs as a they/them when talking about it. Note when such language is used it is not because AI / LLMs are alive or anywhere close to it, it is because as humans need a way to think about AI / LLMs and describe their interactions it is much easier language to consume. 
 
 # What is AI / LLM Good At
 
@@ -25,19 +28,31 @@ Note that all these uses still involve a human at the end. This concept is calle
 
 # What is AI / LLM Not Good At
 
-AI / LLMs are not good at creating discrete answers or solutions of which there is one solution. Because AI / LLMs answers are based off probability themselves their answers will ALWAYS vary and be different. When working in something like Arithmetic you do not want an answer that can possibly change. You want 1 + 1 to always equal 2. 
+AI / LLMs are not good at creating discrete answers or solutions of which there is one solution. Because AI / LLMs answers are based off probability themselves their answers will ALWAYS vary and be different. When working in something like Arithmetic you do not want an answer that can possibly change. You want 1 + 1 to always equal 2. This type of discrete data you would create with other methods (machine learning, algorithms, human development), process, and then create data for an AI / LLM to consume. 
+
+AI / LLMs should also not be used to make decisions on their own. When AI / LLMs are set to make their own autonomous decisions they will, by design, make errors. When these errors are made there is no ownership to that error, and there is no way to fix or correct this. There is no way for society to incensitve AI / LLMs from not making illegal decisions. It will make all decisions based off prompts and chance. This concept is called the [AI Accountability](https://aiethics.turing.ac.uk/modules/accountability/?modulepage=part-one-introduction-to-accountability).
 
 **NOTE** I can concede there are some high levels of mathematics where answers do change depending on context and goals. Yes 1 + 1 can equal 3 for very large versions of 1. But that is rarely used in most bussinesses. 
 
 # Decide What Challenge You Are Trying To Solve 
 
-Step 1 in integrating AI / LLMs into your business is deciding what challenge you are trying to solve. Using AI / LLMs for the sake of saying you have "AI" is going to provide low usability and cost you a lot of money. 
+If you keep in mind what AI / LLMs are good at and what they are not good at you can begin integrating them into your business. 
+
+Step 1 is deciding what challenge you are trying to solve. Using AI / LLMs for the sake of saying you have "AI" is going to provide low usability and cost you a lot of money. 
 
 # Running AI / LLM Locally
 
 # Calling AI / LLM APIs
 
 The running of your own AI / LLM takes expertise and commitment to working with a new software stack. For many companies the smarter solution is to be able to offload the AI needs to a company with an available API. What is great is that with the IBM i and its built in functions to the database we are able to generate prompts and calls. 
+
+LLMs are offered by many companies, and there are strengths and weaknesses to each. There is not one set answer to 'this one is better than this one', isntead you might need to test and figure out which one suits your needs best. Know they are constantly changing their models and what is the best today may not be the best tomorrow. Do not get too hung up on always using the latest and greatest model. Find a model that works well, and build your solutions off that. 
+
+The good news is that calling these APIs works 'basically' the same for each LLM. 
+
+For our tutorial we will use OpenAI. Visit the [OpenAI API](https://openai.com/api/) site and sign up for an account. 
+
+Once you have an account you will want to create an [API key](https://platform.openai.com/api-keys). This secret key is what we will use to authenticate our request to our account at OpenAI (and the same concept applies to all LLMs). 
 
 
 # About K3S (King III Solutions, Inc)
