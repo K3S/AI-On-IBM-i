@@ -12,6 +12,10 @@ When writing new modern RPG programs the ability to integrate with AI / a LLM ca
 
 It is easier to personify and describe AI / LLMs as a they/them when talking about it. Note when such language is used it is not because AI / LLMs are alive or anywhere close to it, it is because as humans need a way to think about AI / LLMs and describe their interactions it is much easier language to consume. 
 
+# IBM 
+
+IBM has a GitHub Page with some examples that could be very helpful. [DB2 For i SDK For Connecting To Various Services](https://ibm.github.io/AI-SDK-Db2-IBMi/)
+
 # What is AI / LLM Good At
 
 AI / LLMs are really good at patterns, whether that is pattern recognition OR pattern recreation. Using all their training matierial or prompting matierial they can go through and, based on the guidelines you give it, develop a new pattern. These patterns are developed very fast and are usually very close to the end product you were looking for. Think the 80/20 rule. AI / LLMs are able to reliably produce the first 80% of a challenge you gave it. Sometimes the AI / LLM gets 'lucky' and is able to produce something that is 90% or even up to 100% of the solution you were looking for. There isn't enough certainty to blanketly use any result AI / LLMs give you, but it is enough to quickly accomplish a large task that is mostly repeatable off past problems. 
