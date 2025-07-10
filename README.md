@@ -141,7 +141,11 @@ Great! You completed your first request!
 
 ## Building The Request Within RPG
 
-Building JSON prompts within RPG is very finnicky. However, using tools in VSCode you can develop a tool to 
+Building JSON prompts within RPG is very finnicky. However, using tools in VSCode you can develop an SQL statement based off your JSON. 
+
+Take your valid JSON statement that you tested within ACS, copy it to the VSCode Clipboard, and the right click option of Paste JSON as SQL. This will develop a much easier to use programatic statement for RPG. 
+
+![VSCode Example](https://aionibmi.k3s.com/image.png)
 
 
 # About K3S (King III Solutions, Inc)
