@@ -46,6 +46,14 @@ But does the challenge require pulling data from multiple sources and seeing if 
 
 Example: You are a restaurant that cooks and serves chicken. You are located close to a major NFL stadium and the weather affects how many people are out and about. Asking an LLM if there is a home game next to your restaurant in the next week and if the weather is good to support people going to that game is a good question for an LLM to tackle. That will tell you the conditions are right to sell more chicken than normal. That is an excellent use of AI / LLMs. Asking an LLM how much more chicken you should buy would be a poor use as the answers can vary widely. 
 
+## Recomendation On Answers From AI / LLMs
+
+Because of the vagueness and fluidity of AI I recommend two major considerations in how you solve challenges. 
+
+1. Whatever situation you are applying AI for, it needs to be ok if AI produces a wrong answer. AI will be wrong, a lot. If your situation requires answers with a high level of fidelity where wrong answers will be costly, do not use AI.
+
+2. Request AI to resolve down to a very simple response, like a binary answer (True / False). You can tell AI you want to know if something with these 15 factors is likely or not, but return a 1 if likely or 0 if not. This programmatically is a lot easier to use. 
+
 # Running AI / LLM Locally
 
 # Calling AI / LLM APIs
@@ -56,9 +64,84 @@ LLMs are offered by many companies, and there are strengths and weaknesses to ea
 
 The good news is that calling these APIs works 'basically' the same for each LLM. 
 
+## Create An Account At An AI / LLM Provider & Create A Key
+
 For our tutorial we will use OpenAI. Visit the [OpenAI API](https://openai.com/api/) site and sign up for an account. 
 
 Once you have an account you will want to create an [API key](https://platform.openai.com/api-keys). This secret key is what we will use to authenticate our request to our account at OpenAI (and the same concept applies to all LLMs). 
+
+## Test Your Key From IBM i ACS Run SQL Scripts
+
+Once you have your API key you will want to create a sample call to run from IBM i ACS Run SQL Scripts. Below is a formatted request you can drop in to Run SQL SCripts and produce a response. This was developed using [OpenAI's API Guide](https://platform.openai.com/docs/api-reference/responses/create). Note the sk-XXXXXXXXX would be your key that you developed (it is also really really long). This is required to authentice your response. 
+
+```
+values QSYS2.HTTP_POST (
+    'https://api.openai.com/v1/chat/completions',
+
+    '{
+      "model":"gpt-3.5-turbo",
+      "messages":[
+        {
+        "role":"user",
+        "content":"What is disco soccer?"
+        }]
+    }',
+
+    '{
+     "headers": {
+       "Authorization": "Bearer sk-XXXXXXXXXXXXXXXXXXXXXXX",
+       "Content-Type": "application/json"
+     }}'
+);
+```
+
+This will give you a response that looks like this:
+
+```
+{
+  "id": "chatcmpl-XXXXXXXXXXXXXXXXXXXX",
+  "object": "chat.completion",
+  "created": 1752151842,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Disco soccer is a style of soccer that incorporates dance and music elements from the disco era. It is a fun and energetic way to play the sport, with players dancing and moving to the beat while also trying to score goals. It is a popular activity at parties and events, where players can let loose and enjoy the game in a more relaxed and playful way.",
+        "refusal": null,
+        "annotations": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 12,
+    "completion_tokens": 73,
+    "total_tokens": 85,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    }
+  },
+  "service_tier": "default",
+  "system_fingerprint": null
+}
+
+```
+
+Great! You completed your first request!
+
+## Building The Request Within RPG
+
+Building JSON prompts within RPG is very finnicky. However, using tools in VSCode you can develop a tool to 
 
 
 # About K3S (King III Solutions, Inc)
